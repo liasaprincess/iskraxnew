@@ -1,3 +1,4 @@
+<html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,9 +36,9 @@
 
   <main>
     <div class="header-center">
-      <span class="section-eyebrow">Enterprise Solutions by Operational Scope</span>
-      <h1 class="section-title">Select Your Architectural Strata</h1>
-      <p class="section-desc">We engineer bespoke software environments tailored to your exact institutional workflows. Select your target architecture scope below to configure estimates and schedule your engineering discovery session.</p>
+      <span class="section-eyebrow">Enterprise Solutions by Architectural Strata</span>
+      <h1 class="section-title">Configure Your Custom Software Scope</h1>
+      <p class="section-desc">We engineer bespoke software environments tailored to your exact institutional workflows. Select your target architecture panel below to configure estimates and schedule your engineering discovery session.</p>
     </div>
 
     <!-- BILLING ESTIMATE CADENCE TOGGLE -->
@@ -49,10 +50,10 @@
       <span class="discount-pill">20% Annual Agreement Savings</span>
     </div>
 
-    <!-- CORE STRATA PACKAGES -->
+    <!-- CORE STRATA PANELS -->
     <div class="services-grid">
       
-      <!-- Tier 1: Monolith -->
+      <!-- Panel 1: Monolith -->
       <div class="service-card" id="card-tier-0" onclick="selectSaaSTier(0)">
         <div class="card-top">
           <span class="card-badge">Foundational Core</span>
@@ -64,13 +65,13 @@
             <li>Single-Workflow Automation Portal</li>
             <li>Encrypted SSL &amp; Automated Backups</li>
             <li>Bi-Weekly Maintenance &amp; Minor Updates</li>
-            <li>Direct Google Meet or Zoom Kickoff</li>
+            <li>Up to 15 Included User Seats</li>
           </ul>
         </div>
-        <button class="select-btn">Select for Discovery</button>
+        <button class="select-btn">Select Panel for Discovery</button>
       </div>
 
-      <!-- Tier 2: Strata (Default Selected) -->
+      <!-- Panel 2: Strata (Default Selected) -->
       <div class="service-card selected" id="card-tier-1" onclick="selectSaaSTier(1)">
         <div class="card-top">
           <span class="card-badge">Multi-Department Tier</span>
@@ -82,13 +83,13 @@
             <li>Role-Based Access &amp; Automated Pipelines</li>
             <li>Third-Party ERP &amp; Payment Gateway Sync</li>
             <li>Monthly Feature Sprints &amp; Continuous Delivery</li>
-            <li>Dedicated High-Availability Cloud with 99.9% SLA</li>
+            <li>Up to 75 Included User Seats with 99.9% SLA</li>
           </ul>
         </div>
-        <button class="select-btn">Selected for Discovery</button>
+        <button class="select-btn">Selected Panel for Discovery</button>
       </div>
 
-      <!-- Tier 3: Apex -->
+      <!-- Panel 3: Apex -->
       <div class="service-card" id="card-tier-2" onclick="selectSaaSTier(2)">
         <div class="card-top">
           <span class="card-badge">Enterprise Scale</span>
@@ -100,10 +101,10 @@
             <li>Unlimited Team Members &amp; Scaled Data Flow</li>
             <li>Weekly Continuous Delivery Sprints</li>
             <li>Direct Slack/Teams Channel with Principal Engineers</li>
-            <li>Executive Quarterly Technology Reviews</li>
+            <li>Executive Quarterly Reviews &amp; 99.99% Availability</li>
           </ul>
         </div>
-        <button class="select-btn">Select for Discovery</button>
+        <button class="select-btn">Select Panel for Discovery</button>
       </div>
 
     </div>
@@ -202,7 +203,7 @@
     <!-- PERSISTENT SCOPING DRAWER -->
     <div class="scoping-drawer" id="scopingDrawer">
       <div class="details">
-        <h4 id="selected-service-title">Selected: Strata (Monthly Retainer)</h4>
+        <h4 id="selected-service-title">Selected Panel: Strata (Monthly Retainer)</h4>
         <p id="selected-service-price">Estimated Budget: $2,850 USD / month — Ready to schedule your introductory scoping call</p>
       </div>
       <button class="btn-book-meeting" onclick="initiateMeetingBooking()">Schedule Discovery Call</button>
@@ -276,10 +277,10 @@
         const btn = card.querySelector('.select-btn');
         if (i === index) {
           card.classList.add('selected');
-          if (btn) btn.textContent = 'Selected for Discovery';
+          if (btn) btn.textContent = 'Selected Panel for Discovery';
         } else {
           card.classList.remove('selected');
-          if (btn) btn.textContent = 'Select for Discovery';
+          if (btn) btn.textContent = 'Select Panel for Discovery';
         }
       }
       updateScopingDrawer();
@@ -309,13 +310,13 @@
 
       if (currentBilling === 'monthly') {
         const total = tier.monthlyPrice + addonTotalMonthly;
-        titleEl.textContent = `Selected: ${tier.title}${addonSuffix} (Monthly Retainer Scope)`;
+        titleEl.textContent = `Selected Panel: ${tier.title}${addonSuffix} (Monthly Retainer Scope)`;
         priceEl.textContent = `Estimated Budget: $${total.toLocaleString()} USD / month — Ready to schedule your introductory scoping call`;
       } else {
         const annualAddonCost = (addonTotalMonthly * 12) * 0.8;
         const total = tier.annualTotal + annualAddonCost;
         const monthlyEquiv = Math.round(total / 12);
-        titleEl.textContent = `Selected: ${tier.title}${addonSuffix} (Annual Agreement Scope — 20% Saved)`;
+        titleEl.textContent = `Selected Panel: ${tier.title}${addonSuffix} (Annual Agreement Scope — 20% Saved)`;
         priceEl.textContent = `Estimated Budget: $${total.toLocaleString()} USD / year ($${monthlyEquiv.toLocaleString()}/mo) — Ready to schedule scoping call`;
       }
     }
