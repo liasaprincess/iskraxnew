@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Custom SaaS Architecture — Iskra Exchange LLC</title>
+  <title>Custom SaaS Architecture &amp; Solutions — Iskra Exchange LLC</title>
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <div class="ambient-glow-1"></div>
   <div class="ambient-glow-2"></div>
+
+  <!-- NAVIGATION -->
   <header>
     <nav class="nav-capsule">
       <a href="index.html" class="brand-group">
-        <img src="LOGOISKRA_embossfloral.jpg" alt="Logo" class="brand-logo-img" />
+        <img src="LOGOISKRA_embossfloral.jpg" alt="Iskra Exchange LLC Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <div class="logo-text">
           <span class="logo-title">Iskra Exchange</span>
           <span class="logo-subtitle">Custom B2B SaaS Platforms</span>
@@ -25,29 +29,301 @@
         <a href="contact.html" class="nav-btn">Book Meeting</a>
         <a href="policies.html" class="nav-btn">Policies &amp; SLA</a>
       </div>
-      <a href="contact.html" class="nav-btn nav-cta">Book Discovery Call</a>
+      <a href="#scopingDrawer" class="nav-btn nav-cta">Book Discovery Call</a>
     </nav>
   </header>
+
   <main>
     <div class="header-center">
-      <span class="section-eyebrow">Enterprise Solutions &amp; Retainers</span>
-      <h1 class="section-title">Configure Your Custom Software Scope</h1>
-      <p class="section-desc">Select your target architecture scope below and schedule your introductory engineering discovery session via Google Meet or Zoom.</p>
+      <span class="section-eyebrow">Enterprise Solutions by Operational Scope</span>
+      <h1 class="section-title">Select Your Architectural Strata</h1>
+      <p class="section-desc">We engineer bespoke software environments tailored to your exact institutional workflows. Select your target architecture scope below to configure estimates and schedule your engineering discovery session.</p>
     </div>
-    <div class="standards-card" style="padding: 40px; text-align: center;">
-      <h3 style="font-family:'Cormorant Garamond'; font-size:2rem; margin-bottom:16px;">Consultation-First Engagement Model</h3>
-      <p style="color:#6C665E; margin-bottom:24px;">No direct website payments. All projects route through engineering scoping calls.</p>
-      <a href="contact.html" class="btn-checkout">Proceed to Scoping Calendar</a>
+
+    <!-- BILLING ESTIMATE CADENCE TOGGLE -->
+    <div class="billing-toggle-wrapper">
+      <div class="billing-toggle-pill">
+        <button class="toggle-opt-btn active" id="btn-monthly" onclick="setBillingCycle('monthly')">Monthly Retainer</button>
+        <button class="toggle-opt-btn" id="btn-annual" onclick="setBillingCycle('annual')">Annual Agreement</button>
+      </div>
+      <span class="discount-pill">20% Annual Agreement Savings</span>
     </div>
+
+    <!-- CORE STRATA PACKAGES -->
+    <div class="services-grid">
+      
+      <!-- Tier 1: Monolith -->
+      <div class="service-card" id="card-tier-0" onclick="selectSaaSTier(0)">
+        <div class="card-top">
+          <span class="card-badge">Foundational Core</span>
+          <h2 class="card-title">Monolith</h2>
+          <div class="card-price" id="price-tier-0">$1,450 <span>/ month est.</span></div>
+          <p class="section-desc" style="font-size: 0.88rem; margin-bottom: 20px;"><strong>Operational Focus:</strong> Single core portal, unified database schema, and disconnected data stream automation.</p>
+          <ul class="card-features">
+            <li>Custom Database Schema &amp; Unified API</li>
+            <li>Single-Workflow Automation Portal</li>
+            <li>Encrypted SSL &amp; Automated Backups</li>
+            <li>Bi-Weekly Maintenance &amp; Minor Updates</li>
+            <li>Direct Google Meet or Zoom Kickoff</li>
+          </ul>
+        </div>
+        <button class="select-btn">Select for Discovery</button>
+      </div>
+
+      <!-- Tier 2: Strata (Default Selected) -->
+      <div class="service-card selected" id="card-tier-1" onclick="selectSaaSTier(1)">
+        <div class="card-top">
+          <span class="card-badge">Multi-Department Tier</span>
+          <h2 class="card-title">Strata</h2>
+          <div class="card-price" id="price-tier-1">$2,850 <span>/ month est.</span></div>
+          <p class="section-desc" style="font-size: 0.88rem; margin-bottom: 20px;"><strong>Operational Focus:</strong> Multi-department operations, automated pipelines, and internal workflow scaling.</p>
+          <ul class="card-features">
+            <li>Full-Stack Multi-Department Custom SaaS Suite</li>
+            <li>Role-Based Access &amp; Automated Pipelines</li>
+            <li>Third-Party ERP &amp; Payment Gateway Sync</li>
+            <li>Monthly Feature Sprints &amp; Continuous Delivery</li>
+            <li>Dedicated High-Availability Cloud with 99.9% SLA</li>
+          </ul>
+        </div>
+        <button class="select-btn">Selected for Discovery</button>
+      </div>
+
+      <!-- Tier 3: Apex -->
+      <div class="service-card" id="card-tier-2" onclick="selectSaaSTier(2)">
+        <div class="card-top">
+          <span class="card-badge">Enterprise Scale</span>
+          <h2 class="card-title">Apex</h2>
+          <div class="card-price" id="price-tier-2">$4,900 <span>/ month est.</span></div>
+          <p class="section-desc" style="font-size: 0.88rem; margin-bottom: 20px;"><strong>Operational Focus:</strong> High-throughput enterprise concurrency, dedicated engineering sprints, and priority compliance.</p>
+          <ul class="card-features">
+            <li>High-Throughput Enterprise Architecture</li>
+            <li>Unlimited Team Members &amp; Scaled Data Flow</li>
+            <li>Weekly Continuous Delivery Sprints</li>
+            <li>Direct Slack/Teams Channel with Principal Engineers</li>
+            <li>Executive Quarterly Technology Reviews</li>
+          </ul>
+        </div>
+        <button class="select-btn">Select for Discovery</button>
+      </div>
+
+    </div>
+
+    <!-- OPTIONAL ARCHITECTURE ADD-ONS -->
+    <div class="addons-section">
+      <div class="addons-card">
+        <span class="section-eyebrow">Enterprise Add-Ons</span>
+        <h3>Expand Your Scoping Requirements</h3>
+        <p class="addons-desc" style="margin-bottom: 0;">Include supplementary technical infrastructure modules in your upcoming discovery agenda.</p>
+
+        <div class="addons-grid">
+          <label class="addon-item" for="addon-migration">
+            <div class="addon-header">
+              <h4>Legacy Data Migration</h4>
+              <input type="checkbox" id="addon-migration" class="addon-checkbox" onchange="toggleAddon(0)" />
+            </div>
+            <p>Sanitization, translation, and automated ETL ingestion of historical records into your custom schema.</p>
+            <div class="addon-price">+$450 / mo est.</div>
+          </label>
+
+          <label class="addon-item" for="addon-sre">
+            <div class="addon-header">
+              <h4>24/7 Dedicated SRE</h4>
+              <input type="checkbox" id="addon-sre" class="addon-checkbox" onchange="toggleAddon(1)" />
+            </div>
+            <p>15-minute emergency response window with round-the-clock site reliability engineer on standby.</p>
+            <div class="addon-price">+$750 / mo est.</div>
+          </label>
+
+          <label class="addon-item" for="addon-airgap">
+            <div class="addon-header">
+              <h4>Air-Gapped Private VPC</h4>
+              <input type="checkbox" id="addon-airgap" class="addon-checkbox" onchange="toggleAddon(2)" />
+            </div>
+            <p>Isolated virtual private cloud environment with dedicated IP subnet and hardware encryption keys.</p>
+            <div class="addon-price">+$950 / mo est.</div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPECIFICATION COMPARISON MATRIX -->
+    <div class="matrix-section">
+      <div class="matrix-card">
+        <div class="header-center" style="margin-bottom: 30px;">
+          <span class="section-eyebrow">Technical Benchmarks</span>
+          <h2 class="section-title" style="font-size: 2.2rem;">Strata &amp; SLA Comparison Matrix</h2>
+        </div>
+
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Architecture Metric</th>
+              <th>Monolith</th>
+              <th>Strata</th>
+              <th>Apex</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature-name">Architectural Scope</td>
+              <td class="tier-spec">Single Core Workflow Portal</td>
+              <td class="tier-spec">Multi-Department Operations Suite</td>
+              <td class="tier-spec">High-Concurrency Enterprise Cloud</td>
+            </tr>
+            <tr>
+              <td class="feature-name">User Accounts / Seats</td>
+              <td class="tier-spec">Up to 15 Included</td>
+              <td class="tier-spec">Up to 75 Included</td>
+              <td class="tier-spec">Unlimited</td>
+            </tr>
+            <tr>
+              <td class="feature-name">Uptime SLA Guarantee</td>
+              <td class="tier-spec">99.5% Uptime</td>
+              <td class="tier-spec">99.9% Uptime</td>
+              <td class="tier-spec">99.99% High Availability</td>
+            </tr>
+            <tr>
+              <td class="feature-name">Feature Sprint Velocity</td>
+              <td class="tier-spec">Bi-Weekly Bug Fixes</td>
+              <td class="tier-spec">Monthly Feature Sprints</td>
+              <td class="tier-spec">Weekly Continuous Deployments</td>
+            </tr>
+            <tr>
+              <td class="feature-name">Discovery Access</td>
+              <td class="tier-spec">1 Monthly Strategy Session</td>
+              <td class="tier-spec">Bi-Weekly Syncs</td>
+              <td class="tier-spec">Weekly Scoping + Slack Pod</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PERSISTENT SCOPING DRAWER -->
+    <div class="scoping-drawer" id="scopingDrawer">
+      <div class="details">
+        <h4 id="selected-service-title">Selected: Strata (Monthly Retainer)</h4>
+        <p id="selected-service-price">Estimated Budget: $2,850 USD / month — Ready to schedule your introductory scoping call</p>
+      </div>
+      <button class="btn-book-meeting" onclick="initiateMeetingBooking()">Schedule Discovery Call</button>
+    </div>
+
   </main>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-capsule">
       <div class="footer-top">
-        <a href="index.html" class="footer-link-btn">Home</a>
-        <a href="contact.html" class="footer-link-btn">Contact: main@iskraexchange.cc</a>
+        <a href="index.html" class="brand-group">
+          <img src="LOGOISKRA_embossfloral.jpg" alt="Iskra Exchange LLC Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+          <div class="logo-text">
+            <span class="logo-title">Iskra Exchange LLC</span>
+            <span class="logo-subtitle">Custom B2B SaaS Platforms</span>
+          </div>
+        </a>
+        <div class="footer-links">
+          <a href="contact.html" class="footer-link-btn">Contact Us</a>
+          <a href="index.html" class="footer-link-btn">Overview</a>
+          <a href="services.html" class="footer-link-btn">SaaS Plans &amp; Scoping</a>
+          <a href="about.html" class="footer-link-btn">About Us</a>
+          <a href="policies.html" class="footer-link-btn">Policies &amp; SLA</a>
+        </div>
       </div>
-      <div class="footer-bottom"><span>© 2026 Iskra Exchange LLC</span></div>
+      <div class="footer-bottom">
+        <span>© 2026 Iskra Exchange LLC. All rights reserved. Direct: <a href="mailto:main@iskraexchange.cc" style="color:inherit; text-decoration:none;">main@iskraexchange.cc</a></span>
+        <span>Bright Ideas. Bold Solutions.</span>
+      </div>
     </div>
   </footer>
+
+  <script>
+    let currentBilling = 'monthly';
+    let selectedTierIndex = 1;
+
+    const tiers = [
+      { title: "Monolith", monthlyPrice: 1450, annualTotal: 13920 },
+      { title: "Strata", monthlyPrice: 2850, annualTotal: 27360 },
+      { title: "Apex", monthlyPrice: 4900, annualTotal: 47040 }
+    ];
+
+    const addons = [
+      { name: "Legacy Data Migration", monthlyCost: 450, selected: false },
+      { name: "24/7 Dedicated SRE Support", monthlyCost: 750, selected: false },
+      { name: "Air-Gapped Private VPC", monthlyCost: 950, selected: false }
+    ];
+
+    function setBillingCycle(cycle) {
+      currentBilling = cycle;
+      document.getElementById('btn-monthly').classList.toggle('active', cycle === 'monthly');
+      document.getElementById('btn-annual').classList.toggle('active', cycle === 'annual');
+
+      if (cycle === 'monthly') {
+        document.getElementById('price-tier-0').innerHTML = `$1,450 <span>/ month est.</span>`;
+        document.getElementById('price-tier-1').innerHTML = `$2,850 <span>/ month est.</span>`;
+        document.getElementById('price-tier-2').innerHTML = `$4,900 <span>/ month est.</span>`;
+      } else {
+        document.getElementById('price-tier-0').innerHTML = `$1,160 <span>/ mo (billed $13,920/yr est.)</span>`;
+        document.getElementById('price-tier-1').innerHTML = `$2,280 <span>/ mo (billed $27,360/yr est.)</span>`;
+        document.getElementById('price-tier-2').innerHTML = `$3,920 <span>/ mo (billed $47,040/yr est.)</span>`;
+      }
+      updateScopingDrawer();
+    }
+
+    function selectSaaSTier(index) {
+      selectedTierIndex = index;
+      for (let i = 0; i < 3; i++) {
+        const card = document.getElementById(`card-tier-${i}`);
+        const btn = card.querySelector('.select-btn');
+        if (i === index) {
+          card.classList.add('selected');
+          if (btn) btn.textContent = 'Selected for Discovery';
+        } else {
+          card.classList.remove('selected');
+          if (btn) btn.textContent = 'Select for Discovery';
+        }
+      }
+      updateScopingDrawer();
+    }
+
+    function toggleAddon(index) {
+      const checkbox = document.getElementById(index === 0 ? 'addon-migration' : index === 1 ? 'addon-sre' : 'addon-airgap');
+      addons[index].selected = checkbox.checked;
+      updateScopingDrawer();
+    }
+
+    function updateScopingDrawer() {
+      const tier = tiers[selectedTierIndex];
+      const titleEl = document.getElementById('selected-service-title');
+      const priceEl = document.getElementById('selected-service-price');
+
+      let addonTotalMonthly = 0;
+      let activeAddonNames = [];
+      addons.forEach(ad => {
+        if (ad.selected) {
+          addonTotalMonthly += ad.monthlyCost;
+          activeAddonNames.push(ad.name);
+        }
+      });
+
+      const addonSuffix = activeAddonNames.length > 0 ? ` + ${activeAddonNames.length} Add-on${activeAddonNames.length > 1 ? 's' : ''}` : '';
+
+      if (currentBilling === 'monthly') {
+        const total = tier.monthlyPrice + addonTotalMonthly;
+        titleEl.textContent = `Selected: ${tier.title}${addonSuffix} (Monthly Retainer Scope)`;
+        priceEl.textContent = `Estimated Budget: $${total.toLocaleString()} USD / month — Ready to schedule your introductory scoping call`;
+      } else {
+        const annualAddonCost = (addonTotalMonthly * 12) * 0.8;
+        const total = tier.annualTotal + annualAddonCost;
+        const monthlyEquiv = Math.round(total / 12);
+        titleEl.textContent = `Selected: ${tier.title}${addonSuffix} (Annual Agreement Scope — 20% Saved)`;
+        priceEl.textContent = `Estimated Budget: $${total.toLocaleString()} USD / year ($${monthlyEquiv.toLocaleString()}/mo) — Ready to schedule scoping call`;
+      }
+    }
+
+    function initiateMeetingBooking() {
+      const tier = tiers[selectedTierIndex];
+      window.location.href = `contact.html?plan=${encodeURIComponent(tier.title)}`;
+    }
+  </script>
 </body>
 </html>
