@@ -38,7 +38,7 @@
     <div class="header-center" style="margin-bottom: 40px;">
       <span class="section-eyebrow">Enterprise Solutions by Architectural Strata</span>
       <h1 class="section-title">Configure Your Custom Software Scope</h1>
-      <p class="section-desc">We engineer bespoke software environments tailored to your exact institutional workflows. Select your target architecture card below to configure estimates and schedule your discovery session.</p>
+      <p class="section-desc">We engineer bespoke software environments tailored to your exact institutional workflows. Select your target architecture panel below to configure estimates and schedule your discovery session.</p>
     </div>
 
     <!-- BILLING ESTIMATE CADENCE TOGGLE -->
@@ -50,10 +50,10 @@
       <span style="font-size: 0.82rem; font-weight: 600; color: var(--accent-warm); text-transform: uppercase; letter-spacing: 0.12em; background: rgba(255,255,255,0.4); padding: 8px 16px; border-radius: var(--radius-pill); border: 1px solid var(--glass-border);">20% Annual Agreement Savings</span>
     </div>
 
-    <!-- CORE STRATA CARDS GRID -->
+    <!-- CORE STRATA PANELS GRID -->
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 70px;" id="pricing-grid">
       
-      <!-- Card 1: Monolith -->
+      <!-- Panel 1: Monolith -->
       <div class="sidebar-card" id="card-tier-0" onclick="selectSaaSTier(0)" style="padding: 36px 30px; cursor: pointer; transition: all 0.3s ease; border: 2px solid var(--glass-border); position: relative;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
           <span style="font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600; color: var(--accent-warm); letter-spacing: 0.15em;">01 / CORE</span>
@@ -69,10 +69,10 @@
           <li style="display: flex; align-items: flex-start; gap: 8px;"><span style="color: var(--accent-warm);">▪</span> Bi-Weekly Maintenance &amp; Updates</li>
           <li style="display: flex; align-items: flex-start; gap: 8px;"><span style="color: var(--accent-warm);">▪</span> Up to 15 Included User Seats</li>
         </ul>
-        <div class="select-btn-text" id="btn-text-0" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--accent-warm);">Select Card</div>
+        <div class="select-btn-text" id="btn-text-0" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--accent-warm);">Select Panel</div>
       </div>
 
-      <!-- Card 2: Strata (Default Selected) -->
+      <!-- Panel 2: Strata (Default Selected) -->
       <div class="sidebar-card selected" id="card-tier-1" onclick="selectSaaSTier(1)" style="padding: 36px 30px; cursor: pointer; transition: all 0.3s ease; border: 2px solid var(--accent-warm); background: rgba(255, 255, 255, 0.55); box-shadow: var(--shadow-elevated); position: relative;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
           <span style="font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600; color: var(--accent-warm); letter-spacing: 0.15em;">02 / SUITE</span>
@@ -88,10 +88,10 @@
           <li style="display: flex; align-items: flex-start; gap: 8px;"><span style="color: var(--accent-warm);">▪</span> Monthly Feature Sprints &amp; Delivery</li>
           <li style="display: flex; align-items: flex-start; gap: 8px;"><span style="color: var(--accent-warm);">▪</span> Up to 75 Seats with 99.9% SLA</li>
         </ul>
-        <div class="select-btn-text" id="btn-text-1" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--accent-dark);">Selected for Discovery</div>
+        <div class="select-btn-text" id="btn-text-1" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--accent-dark);">Selected Panel for Discovery</div>
       </div>
 
-      <!-- Card 3: Apex -->
+      <!-- Panel 3: Apex -->
       <div class="sidebar-card" id="card-tier-2" onclick="selectSaaSTier(2)" style="padding: 36px 30px; cursor: pointer; transition: all 0.3s ease; border: 2px solid var(--glass-border); position: relative;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
           <span style="font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600; color: var(--accent-warm); letter-spacing: 0.15em;">03 / ENTERPRISE</span>
@@ -107,7 +107,7 @@
           <li style="display: flex; align-items: flex-start; gap: 8px;"><span style="color: var(--accent-warm);">▪</span> Direct Slack/Teams Engineering Pod</li>
           <li style="display: flex; align-items: flex-start; gap: 8px;"><span style="color: var(--accent-warm);">▪</span> Executive Reviews &amp; 99.99% Uptime</li>
         </ul>
-        <div class="select-btn-text" id="btn-text-2" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--accent-warm);">Select Card</div>
+        <div class="select-btn-text" id="btn-text-2" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; color: var(--accent-warm);">Select Panel</div>
       </div>
 
     </div>
@@ -202,7 +202,7 @@
     <!-- PERSISTENT SCOPING DRAWER -->
     <div class="scoping-drawer" id="scopingDrawer" style="background: var(--glass-surface); backdrop-filter: var(--blur-heavy); border: 1px solid var(--glass-border); border-radius: var(--radius-card); padding: 24px 36px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow-elevated); margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
       <div class="details">
-        <h4 id="selected-service-title" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--text-main); margin-bottom: 4px;">Selected Card: Strata (Monthly Retainer)</h4>
+        <h4 id="selected-service-title" style="font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--text-main); margin-bottom: 4px;">Selected Panel: Strata (Monthly Retainer)</h4>
         <p id="selected-service-price" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 300;">Estimated Budget: $2,850 USD / month — Ready to schedule your introductory scoping call</p>
       </div>
       <button class="btn-checkout" onclick="initiateMeetingBooking()">Schedule Discovery Call</button>
@@ -278,13 +278,13 @@
           card.style.border = "2px solid var(--accent-warm)";
           card.style.background = "rgba(255, 255, 255, 0.55)";
           card.style.boxShadow = "var(--shadow-elevated)";
-          btnText.textContent = "Selected Card for Discovery";
+          btnText.textContent = "Selected Panel for Discovery";
           btnText.style.color = "var(--accent-dark)";
         } else {
           card.style.border = "2px solid var(--glass-border)";
           card.style.background = "var(--glass-card)";
           card.style.boxShadow = "var(--shadow-glass)";
-          btnText.textContent = "Select Card";
+          btnText.textContent = "Select Panel";
           btnText.style.color = "var(--accent-warm)";
         }
       }
@@ -315,13 +315,13 @@
 
       if (currentBilling === 'monthly') {
         const total = tier.monthlyPrice + addonTotalMonthly;
-        titleEl.textContent = `Selected Card: ${tier.title}${addonSuffix} (Monthly Retainer Scope)`;
+        titleEl.textContent = `Selected Panel: ${tier.title}${addonSuffix} (Monthly Retainer Scope)`;
         priceEl.textContent = `Estimated Budget: $${total.toLocaleString()} USD / month — Ready to schedule your introductory scoping call`;
       } else {
         const annualAddonCost = (addonTotalMonthly * 12) * 0.8;
         const total = tier.annualTotal + annualAddonCost;
         const monthlyEquiv = Math.round(total / 12);
-        titleEl.textContent = `Selected Card: ${tier.title}${addonSuffix} (Annual Agreement Scope — 20% Saved)`;
+        titleEl.textContent = `Selected Panel: ${tier.title}${addonSuffix} (Annual Agreement Scope — 20% Saved)`;
         priceEl.textContent = `Estimated Budget: $${total.toLocaleString()} USD / year ($${monthlyEquiv.toLocaleString()}/mo) — Ready to schedule scoping call`;
       }
     }
