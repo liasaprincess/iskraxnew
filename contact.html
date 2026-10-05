@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Schedule Discovery Session — Iskra Exchange LLC</title>
+  <title>Book Discovery Call — Iskra Exchange LLC</title>
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <div class="ambient-glow-1"></div>
   <div class="ambient-glow-2"></div>
+
+  <!-- NAVIGATION -->
   <header>
     <nav class="nav-capsule">
       <a href="index.html" class="brand-group">
-        <img src="LOGOISKRA_embossfloral.jpg" alt="Logo" class="brand-logo-img" />
+        <img src="LOGOISKRA_embossfloral.jpg" alt="Iskra Exchange LLC Logo" class="brand-logo-img" onerror="this.style.display='none'" />
         <div class="logo-text">
           <span class="logo-title">Iskra Exchange</span>
           <span class="logo-subtitle">Custom B2B SaaS Platforms</span>
@@ -25,30 +29,91 @@
         <a href="contact.html" class="nav-btn active">Book Meeting</a>
         <a href="policies.html" class="nav-btn">Policies &amp; SLA</a>
       </div>
-      <a href="services.html" class="nav-btn nav-cta">Review Plans</a>
+      <a href="contact.html" class="nav-btn nav-cta">Book Discovery Call</a>
     </nav>
   </header>
-  <main>
-    <div class="header-center">
-      <span class="section-eyebrow">Enterprise Discovery &amp; Video Consultations</span>
-      <h1 class="section-title">Schedule An Introductory Session</h1>
-      <p class="section-desc">We do not accept automated website payments. Every engagement begins with a direct discovery session via Google Meet or Zoom.</p>
+
+  <main style="max-width: 650px; margin: 40px auto; padding: 0 20px;">
+    
+    <div class="header-center" style="margin-bottom: 40px;">
+      <span class="section-eyebrow">Consultation-First Engagement</span>
+      <h1 class="section-title">Initiate Discovery Session</h1>
+      <p class="section-desc" id="selected-plan-banner">Connect with our engineering principals to evaluate your custom architecture requirements.</p>
     </div>
-    <div class="standards-card" style="padding: 50px; max-width: 800px; margin: 0 auto;">
-      <h2 style="font-family:'Cormorant Garamond'; font-size:2.2rem; margin-bottom:12px;">How can we help you?</h2>
-      <p style="color:#6C665E; margin-bottom:24px;">Submit your requirements below or email us directly at <strong>main@iskraexchange.cc</strong>.</p>
-      <form onsubmit="event.preventDefault(); alert('Scoping brief transmitted to main@iskraexchange.cc!');" style="display:flex; flex-direction:column; gap:16px;">
-        <input type="text" placeholder="Your Name &amp; Title" required class="form-input" style="padding:12px; border-radius:12px; border:1px solid var(--glass-border); background:rgba(255,255,255,0.6);" />
-        <input type="email" placeholder="main@iskraexchange.cc" required class="form-input" style="padding:12px; border-radius:12px; border:1px solid var(--glass-border); background:rgba(255,255,255,0.6);" />
-        <textarea rows="4" placeholder="How can we help you? Tell us about your operational bottlenecks or custom software requirements..." required style="padding:12px; border-radius:12px; border:1px solid var(--glass-border); background:rgba(255,255,255,0.6);"></textarea>
-        <button type="submit" class="btn-submit">Transmit Scoping Brief</button>
+
+    <!-- CONTACT FORM CARD -->
+    <div class="standards-card" style="padding: 40px; margin-bottom: 30px;">
+      
+      <!-- 
+        To have form submissions sent directly to your email, you can hook this up to a 
+        service like Formspree (action="https://formspree.io/f/your-form-id") or Netlify Forms.
+      -->
+      <form action="https://formspree.io/f/your-form-id" method="POST" style="display: flex; flex-direction: column; gap: 24px;">
+        
+        <!-- Hidden input to pass selected plan -->
+        <input type="hidden" name="selected_plan" id="form-plan-input" value="General Scoping" />
+
+        <div>
+          <label style="display: block; font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600; color: var(--accent-warm); letter-spacing: 0.1em; margin-bottom: 8px;" for="name">Your Full Name</label>
+          <input type="text" id="name" name="name" required placeholder="e.g. Alisha Johnson" style="width: 100%; padding: 14px 18px; background: var(--glass-surface); border: 1px solid var(--glass-border); border-radius: var(--radius-card); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.950rem; color: var(--text-main); outline: none;" />
+        </div>
+
+        <div>
+          <label style="display: block; font-family: 'Cinzel', serif; font-size: 0.8rem; font-weight: 600; color: var(--accent-warm); letter-spacing: 0.1em; margin-bottom: 8px;" for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="name@company.com" style="width: 100%; padding: 14px 18px; background: var(--glass-surface); border: 1px solid var(--glass-border); border-radius: var(--radius-card); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.950rem; color: var(--text-main); outline: none;" />
+        </div>
+
+        <button type="submit" class="btn-checkout" style="width: 100%; padding: 16px; margin-top: 10px; cursor: pointer;">Submit Scoping Request</button>
       </form>
+
     </div>
+
+    <!-- AUTOMATED REPLY NOTICE -->
+    <div style="text-align: center; padding: 20px; font-size: 0.88rem; color: var(--text-muted); font-weight: 300; line-height: 1.6;">
+      <p>Upon submission, an automated reply will be dispatched to your inbox containing direct scheduling links and alternative communication channels for your convenience.</p>
+      <p style="margin-top: 10px;">Direct institutional inquiries: <a href="mailto:main@iskraexchange.cc" style="color: var(--accent-warm); text-decoration: none; font-weight: 500;">main@iskraexchange.cc</a></p>
+    </div>
+
   </main>
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-capsule">
-      <div class="footer-bottom"><span>© 2026 Iskra Exchange LLC. main@iskraexchange.cc</span></div>
+      <div class="footer-top">
+        <a href="index.html" class="brand-group">
+          <img src="LOGOISKRA_embossfloral.jpg" alt="Iskra Exchange LLC Logo" class="brand-logo-img" onerror="this.style.display='none'" />
+          <div class="logo-text">
+            <span class="logo-title">Iskra Exchange LLC</span>
+            <span class="logo-subtitle">Custom B2B SaaS Platforms</span>
+          </div>
+        </a>
+        <div class="footer-links">
+          <a href="contact.html" class="footer-link-btn">Contact Us</a>
+          <a href="index.html" class="footer-link-btn">Overview</a>
+          <a href="services.html" class="footer-link-btn">SaaS Plans &amp; Scoping</a>
+          <a href="about.html" class="footer-link-btn">About Us</a>
+          <a href="policies.html" class="footer-link-btn">Policies &amp; SLA</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Iskra Exchange LLC. All rights reserved. Direct: <a href="mailto:main@iskraexchange.cc" style="color:inherit; text-decoration:none;">main@iskraexchange.cc</a></span>
+        <span>Bright Ideas. Bold Solutions.</span>
+      </div>
     </div>
   </footer>
+
+  <script>
+    // Automatically detect if a plan was passed in the URL (e.g. contact.html?plan=Monolith)
+    const urlParams = new URLSearchParams(window.location.search);
+    const planParam = urlParams.get('plan');
+    
+    if (planParam) {
+      const banner = document.getElementById('selected-plan-banner');
+      const planInput = document.getElementById('form-plan-input');
+      
+      banner.textContent = `Configuring discovery session for the ${planParam} architectural package.`;
+      planInput.value = planParam;
+    }
+  </script>
 </body>
 </html>
