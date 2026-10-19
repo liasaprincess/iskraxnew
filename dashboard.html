@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Iskra Exchange</title>
+</head>
+<body>
+  <main>
+    <h1>Iskra Exchange Dashboard</h1>
+    <p id="account">Checking your session…</p>
+
+    <h2>Subscription plans</h2>
+    <p>Monolith — $1,450/month</p>
+    <p>Strata — $2,850/month</p>
+    <p>Apex — $4,900/month</p>
+
+    <p>Checkout buttons will be connected after the server-side
+       Stripe function is deployed.</p>
+
+    <button id="logout">Sign out</button>
+  </main>
+
+  <script type="module">
+    import { supabase, signOut } from "./auth.js";
+
+    const account = document.querySelector("#account");
+
+    const { data, error } = await supabase.auth.getUser();
+
+    if (error || !data.user) {
+      window.location.replace("/login.html");
+    } else {
+      account.textContent = `Signed in as ${data.user.email}`;
+    }
+
+    document.querySelector("#logout").addEventListener("click",
+      async () => {
+        const { error } = await signOut();
+
+        if (error) {
+          account.textContent = "Could not sign out. Please try again.";
+          return;
+        }
+
+        window.location.replace("/login.html");
+      }
+    );
+  </script>
+</body>
+</html>
