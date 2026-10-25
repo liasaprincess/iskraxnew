@@ -151,8 +151,8 @@ header {
 }
 
 .nav-btn:hover, .nav-btn.active {
-  background: 3E3531;
-  color: var(--accent-dark);
+  background: d8c2c9;
+  color: var;
   box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
