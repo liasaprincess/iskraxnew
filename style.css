@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Cinzel:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Atelier Rose & Sunset Palette inspired by reference designs */
+  /* Soft Rose & Sunset Quartz Palette from References */
   --bg-gradient: linear-gradient(135deg, #f4e8eb 0%, #e6d3d8 50%, #d8c2c9 100%);
   --text-main: #24211D;
   --text-muted: #6C665E;
   
-  --accent-warm: #C79A73;       /* Warm Bronze / Copper */
-  --accent-dark: #2A2421;       /* Deep Espresso */
+  --accent-warm: #C79A73;       /* Warm Bronze / Copper Accent */
+  --accent-dark: #2A2421;       /* Deep Espresso Buttons */
   
   /* Glassmorphism Surface Variables */
   --glass-surface: rgba(255, 255, 255, 0.65);
@@ -113,10 +113,10 @@ header {
 }
 
 .logo-title {
-  font-family: 'Cinzel', serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   color: var(--text-main);
   text-transform: uppercase;
 }
@@ -124,8 +124,9 @@ header {
 .logo-subtitle {
   font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   color: var(--accent-warm);
+  font-weight: 600;
 }
 
 .nav-links {
@@ -135,6 +136,7 @@ header {
 }
 
 .nav-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-main);
@@ -163,34 +165,35 @@ header {
   background: #3E3531 !important;
 }
 
-/* Typography Helpers */
+/* Typography Helpers (Clean Sans-Serif) */
 .section-eyebrow {
-  font-family: 'Cinzel', serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   color: var(--accent-warm);
   display: block;
   margin-bottom: 10px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3rem;
-  font-weight: 400;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
   color: var(--text-main);
   line-height: 1.2;
   margin-bottom: 16px;
 }
 
-.section-title em {
-  font-style: italic;
+.section-title span, .section-title em {
   font-weight: 400;
   color: var(--accent-warm);
+  font-style: normal;
 }
 
 .section-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 1rem;
   color: var(--text-muted);
   font-weight: 300;
@@ -272,6 +275,7 @@ footer {
 }
 
 .footer-link-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.85rem;
   color: var(--text-muted);
   text-decoration: none;
