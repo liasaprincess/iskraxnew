@@ -1,0 +1,559 @@
+/* ==========================================================================
+   ISKRA EXCHANGE LLC — MASTER STYLESHEET
+   Aesthetic: Neo-Glass, Warm Plaster, Veined Mineral Strata, Obsidian
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. DESIGN SYSTEM VARIABLES
+   -------------------------------------------------------------------------- */
+:root {
+  --bg-base: #EDE8E1;
+  --bg-gradient: radial-gradient(130% 90% at 50% 0%, #F6F2EC 0%, #E3DCCE 45%, #CBBDA9 100%);
+  
+  --glass-surface: rgba(255, 255, 255, 0.42);
+  --glass-surface-hover: rgba(255, 255, 255, 0.65);
+  --glass-card: rgba(255, 255, 255, 0.35);
+  --glass-highlight: rgba(255, 255, 255, 0.82);
+  
+  --glass-border: rgba(255, 255, 255, 0.65);
+  --glass-border-subtle: rgba(184, 168, 150, 0.35);
+  --border-accent: #C79A73;
+  
+  --text-main: #24211D;
+  --text-muted: #6C665E;
+  --text-light: #9B9489;
+  
+  --accent-glow: rgba(235, 194, 153, 0.5);
+  --accent-warm: #B38661;
+  --accent-dark: #1E1A17;
+  
+  --blur-heavy: blur(24px);
+  --blur-soft: blur(12px);
+  --radius-pill: 9999px;
+  --radius-card: 32px;
+  --radius-sm: 14px;
+  
+  --shadow-glass: 0 20px 40px -15px rgba(68, 56, 44, 0.08), 
+                  0 1px 1px 0 rgba(255, 255, 255, 0.85) inset;
+  --shadow-elevated: 0 30px 60px -12px rgba(68, 56, 44, 0.16),
+                     0 0 30px 4px var(--accent-glow);
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE & RESET
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg-base);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient glow orbs */
+.ambient-glow-1 {
+  position: fixed;
+  top: -15%;
+  left: 15%;
+  width: 70vw;
+  height: 60vh;
+  background: radial-gradient(circle, rgba(255, 252, 246, 0.85) 0%, rgba(245, 235, 220, 0) 70%);
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ambient-glow-2 {
+  position: fixed;
+  bottom: -10%;
+  right: 5%;
+  width: 50vw;
+  height: 50vh;
+  background: radial-gradient(circle, rgba(214, 193, 172, 0.45) 0%, rgba(200, 180, 160, 0) 75%);
+  filter: blur(90px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. TYPOGRAPHY & HEADINGS
+   -------------------------------------------------------------------------- */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-warm);
+  border: 1px solid var(--border-accent);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.4rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 720px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.header-center {
+  text-align: center;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVIGATION
+   -------------------------------------------------------------------------- */
+header {
+  position: fixed;
+  top: 24px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.nav-capsule {
+  width: 100%;
+  max-width: 1160px;
+  background: var(--glass-surface);
+  backdrop-filter: var(--blur-heavy);
+  -webkit-backdrop-filter: var(--blur-heavy);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-pill);
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-glass);
+  transition: all 0.3s ease;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.brand-logo-img {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: 'Cinzel', 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--text-main);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.logo-subtitle {
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-warm);
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.nav-btn.active {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.nav-cta {
+  background: var(--accent-dark);
+  color: #FFF !important;
+  padding: 9px 22px;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-cta:hover {
+  background: #383029 !important;
+  box-shadow: 0 6px 20px rgba(30, 26, 23, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   5. MAIN LAYOUT
+   -------------------------------------------------------------------------- */
+main {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 130px 24px 70px;
+}
+
+/* --------------------------------------------------------------------------
+   6. HERO & QUOTE
+   -------------------------------------------------------------------------- */
+.hero-section-full {
+  position: relative;
+  width: 100%;
+  height: 78vh;
+  min-height: 560px;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-elevated);
+  margin-bottom: 36px;
+  background: #CFC5B6;
+}
+
+.hero-section-full img.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  opacity: 0.82;
+  filter: contrast(1.04) brightness(1.02);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+}
+
+.hero-section-full:hover img.hero-bg {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.hero-section-full::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(245, 241, 235, 0.1) 0%, rgba(30, 26, 23, 0.42) 100%);
+  pointer-events: none;
+}
+
+.hero-glass-headline {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  max-width: 740px;
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: var(--blur-heavy);
+  -webkit-backdrop-filter: var(--blur-heavy);
+  border: 1px solid var(--glass-border);
+  border-radius: 26px;
+  padding: 30px 38px;
+  z-index: 2;
+  box-shadow: 0 25px 50px rgba(20, 18, 16, 0.16);
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero-logo-thumbnail {
+  width: 86px;
+  height: 86px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 1.5px solid var(--border-accent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+  background: #EDE8E1;
+}
+
+.hero-text-block .eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-dark);
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.hero-text-block h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  line-height: 1.12;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.quote-section-under {
+  width: 100%;
+  background: var(--glass-surface);
+  backdrop-filter: var(--blur-heavy);
+  -webkit-backdrop-filter: var(--blur-heavy);
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--accent-warm);
+  border-radius: 22px;
+  padding: 44px 50px;
+  box-shadow: var(--shadow-glass);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.quote-section-under .quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.1rem;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--text-main);
+  max-width: 950px;
+  margin-bottom: 14px;
+}
+
+.quote-section-under .quote-author {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-warm);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   7. BUTTONS & SHARED CARDS
+   -------------------------------------------------------------------------- */
+.btn-checkout, .btn-submit, .btn-book-meeting {
+  background: var(--accent-dark);
+  color: #FFF;
+  border: none;
+  padding: 16px 38px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(30, 26, 23, 0.2);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.btn-checkout:hover, .btn-submit:hover, .btn-book-meeting:hover {
+  background: #3A322C;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(30, 26, 23, 0.28);
+}
+
+.btn-secondary, .btn-edu-secondary {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  padding: 16px 32px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover, .btn-edu-secondary:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.sidebar-card, .standards-card {
+  background: var(--glass-card);
+  backdrop-filter: var(--blur-heavy);
+  -webkit-backdrop-filter: var(--blur-heavy);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-glass);
+}
+
+/* --------------------------------------------------------------------------
+   8. FOOTER
+   -------------------------------------------------------------------------- */
+footer {
+  position: relative;
+  z-index: 10;
+  margin-top: 60px;
+  padding: 40px 24px 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-capsule {
+  width: 100%;
+  max-width: 1120px;
+  background: var(--glass-surface);
+  backdrop-filter: var(--blur-heavy);
+  -webkit-backdrop-filter: var(--blur-heavy);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  padding: 34px 44px;
+  box-shadow: var(--shadow-glass);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-bottom: 1px solid var(--glass-border-subtle);
+  padding-bottom: 24px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer-link-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.footer-link-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   9. RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media (max-width: 980px) {
+  .hero-section-full {
+    height: 60vh;
+    min-height: 420px;
+  }
+  
+  .hero-glass-headline {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 20px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  
+  .hero-logo-thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .hero-text-block h1 {
+    font-size: 1.9rem;
+  }
+  
+  .quote-section-under {
+    padding: 32px 24px;
+  }
+  
+  .quote-section-under .quote-text {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.4rem;
+  }
+  
+  .footer-top, 
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    text-align: left;
+  }
+}
