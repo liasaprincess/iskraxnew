@@ -151,13 +151,13 @@ header {
 }
 
 .nav-btn:hover, .nav-btn.active {
-  background: d8c2c9;
-  color: var;
+  background: #d8c2c9;
+  color: var(--text-main);
   box-shadow: 0 4px 12px rgba(0,0,0,0.03);
 }
 
 .nav-cta {
-  background: 3E3531;
+  background: #3E3531;
   color: #FFFFFF !important;
   font-weight: 600;
 }
