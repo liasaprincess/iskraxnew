@@ -8,7 +8,7 @@
   <!-- Master External Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="home-page">
 
   <!-- Ambient Light Orbs -->
   <div class="ambient-glow-1"></div>
@@ -16,22 +16,20 @@
 
   <!-- FLOATING NAVIGATION BAR WITH LOGO -->
   <header>
-    <nav class="nav-capsule">
-      <div class="brand-group" onclick="switchPage('home')">
-        <img src="LOGOISKRA_embossfloral.jpg" alt="Iskra Exchange LLC Logo" class="brand-logo-img" onerror="this.style.display='none'" />
-        <div class="logo-text">
-          <span class="logo-title">Iskra Exchange</span>
-          <span class="logo-subtitle">Custom B2B SaaS Platforms</span>
+    <nav class="nav-capsule" aria-label="Main navigation">
+      <a href="index.html" class="brand-group" aria-label="Iskra Exchange home">
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HeroTitle-ijywpvpJrY2A1YzOqu3vP9U6mdZjBE.png" alt="Iskra Exchange" class="brand-wordmark" />
+      </a>
+      <details class="nav-menu">
+        <summary aria-label="Open navigation menu"><span class="hamburger-lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="sr-only">Menu</span></summary>
+        <div class="nav-links">
+          <a href="index.html" class="nav-btn">Home</a>
+          <a href="services.html" class="nav-btn">Services</a>
+          <a href="about.html" class="nav-btn">About</a>
+          <a href="contact.html" class="nav-btn">Contact</a>
+          <a href="policies.html" class="nav-btn">Policies</a>
         </div>
-      </div>
-      <div class="nav-links">
-        <button class="nav-btn active" id="btn-home" onclick="switchPage('home')">Overview</button>
-        <a href="services.html" class="nav-btn">SaaS Plans &amp; Scoping</a>
-        <a href="about.html" class="nav-btn">About Us</a>
-        <a href="contact.html" class="nav-btn">Book Meeting</a>
-        <a href="policies.html" class="nav-btn">Policies &amp; SLA</a>
-      </div>
-      <a href="contact.html" class="nav-btn nav-cta">Book Discovery Call</a>
+      </details>
     </nav>
   </header>
 
@@ -43,14 +41,11 @@
       
       <!-- 1. FULL HERO IMAGE: LUMINOUS ARCHITECTURAL SHAFT -->
       <div class="hero-section-full">
-        <img src="image0%20(1).jpeg" alt="Soft abstract light in rose and warm ivory" class="hero-bg" />
-        
-        <!-- Glass Headline Badge with Embossed Logo Card -->
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%282%29-JO8RmT1YuHKWCA8juVSybo4isyf3w2.jpg" alt="Warm architectural light rising through a dark space" class="hero-bg" />
         <div class="hero-glass-headline">
-          <img src="LOGOISKRA_embossfloral.jpg" alt="Iskra Exchange Embossed Emblem" class="hero-logo-thumbnail" onerror="this.style.display='none'" />
           <div class="hero-text-block">
-            <span class="eyebrow">B2B Custom Software as a Service</span>
-            <h1>Tailored business platforms delivered on modern cloud subscriptions.</h1>
+            <h1>Software that brings your work into focus.</h1>
+            <p>Purpose-built business platforms, shaped around the way your team works.</p>
           </div>
         </div>
       </div>
