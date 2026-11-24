@@ -91,7 +91,7 @@ header {
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-pill);
   padding: 12px 24px;
-  box-shadow: var(--shadow-glass);
+  box-shadow: var(#000000);
 }
 
 .brand-group {
@@ -136,25 +136,6 @@ header {
   align-items: center;
 }
 
-.nav-btn {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-main);
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: var(--radius-pill);
-  transition: all 0.3s ease;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.nav-btn:hover, .nav-btn.active {
-  background: #d8c2c9;
-  color: var(--text-main);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-}
 
 .nav-cta {
   background: #3E3531;
@@ -174,16 +155,7 @@ main {
 }
 
 /* Typography & Hero Glass Components */
-.section-eyebrow {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--accent-warm);
-  display: block;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
+
 
 .section-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
